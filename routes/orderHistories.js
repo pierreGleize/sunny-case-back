@@ -28,7 +28,7 @@ router.post("/addOrder", async (req, res) => {
       total,
       payment,
       cart,
-      orderNumber: `ORD_${Date.now()}${Math.floor(Math.random() * 100000)}`,
+      orderNumber: `ORD_${Date.now()}${Math.floor(Math.random() * 100)}`,
     }).save();
 
     const order = await OrderHistories.findOne({ _id: newOrder._id })

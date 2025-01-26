@@ -14,12 +14,6 @@ const userSchema = mongoose.Schema({
   email: String,
   password: String,
   address: { type: addressSchema, default: {} },
-  cart: [
-    {
-      article_id: { type: mongoose.Schema.Types.ObjectId, ref: "articles" },
-      quantity: { type: Number, default: 1 },
-    },
-  ],
 });
 
 const User = mongoose.model("users", userSchema);
